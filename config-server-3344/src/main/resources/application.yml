@@ -1,0 +1,10 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: springcloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wds--moon/spring-cloud-config.git # 远程获取配置文件

@@ -1,0 +1,34 @@
+server:
+  port: 80
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
+  instance:
+    instance-id: zuul
+    prefer-ip-address: true
+info:
+  name: 靖远小师兄
+  hobby: zuul
+zuul:
+  routes:
+    dept.serviceId: provide-dept #为服务起一个别名,这里可以是任意的服务地址转发
+    dept.path: /dept/** #访问地址 http://www.moon.com/api/data/dept/dept/get/8 配置为80 全域名访问
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+  prefix: /api/data # 配置默认访问路径前缀
+  ignored-services: "*" # 隐藏微服务地址
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeout-in-milliseconds: 3000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
