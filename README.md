@@ -1,6 +1,6 @@
 > SpringCloud结构
 
-![login](https://github.com/wds--moon/cloud/blob/master/image-20200924170754179.png)
+![login](image-20200924170754179.png)
 
 >配置文件全部放在github -->https://github.com/wds--moon/spring-cloud-config.git
 
